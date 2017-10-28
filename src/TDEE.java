@@ -12,27 +12,19 @@
 public class TDEE {
 
     //Static values for testing
-    private double weightInKG = 88;
-    private int age = 29;
-    private double heightInCM = 183;
-    private Gender gender = Gender.MALE;
-    private MovementExpenditure movementExpenditure = MovementExpenditure.VERYACTIVE;
-    private int restingEnergyExpenditure;
-    private int finalTDEE;
 
-    public static void main(String[] args) {
-        System.out.println("Welcome to the TDEE calculator");
-        TDEE t = new TDEE();
-        t.getTDEE();
+    private double weightInKG, heightInCM;
+    private int age, restingEnergyExpenditure, finalTDEE;
+    private Gender gender;
+    private MovementExpenditure movementExpenditure;
 
-        //Printing
-        System.out.println("Here are the values you provided: \n");
-        System.out.println("Weight in KG: " + t.weightInKG);
-        System.out.println("Age: " + t.age);
-        System.out.println("Height in CM: " + t.heightInCM);
-        System.out.println("Gender: " + t.gender);
-        System.out.println("Movement Expenditure Chosen: " + t.movementExpenditure + "\n");
-        System.out.println("Your TDEE is: " + t.finalTDEE);
+    public  TDEE(double weightInKG, double heightInCM, int age, Gender gender, MovementExpenditure movExp){
+        this.weightInKG = weightInKG;
+        this.heightInCM = heightInCM;
+        this.age = age;
+        this.gender = gender;
+        this.movementExpenditure = movExp;
+        this.getTDEE();
     }
 
     private void getTDEE(){
@@ -54,7 +46,7 @@ public class TDEE {
          * For males: 10 x weight (kg) + 6.25 x height (cm) – 5 x age (y) + 5 = REE
          */
         restingEnergyExpenditure = ((Double) (10 * weightInKG + 6.25 * heightInCM - 5 * age + 5)).intValue();
-        getMovementExpenditure();
+        calculateMovementExpenditure();
     }
 
     private void femaleForumla(){
@@ -64,10 +56,10 @@ public class TDEE {
          * For females: 10 x weight (kg) + 6.25 x height (cm) – 5 x age (y) – 161 = REE
          */
         restingEnergyExpenditure = ((Double) (10 * weightInKG + 6.25 * heightInCM - 5 * age - 161)).intValue();
-        getMovementExpenditure();
+        calculateMovementExpenditure();
     }
 
-    private void getMovementExpenditure(){
+    private void calculateMovementExpenditure(){
         switch(movementExpenditure){
             case SEDENTARY:
                 //Just normal everyday activity like a little walking, a couple
@@ -89,6 +81,64 @@ public class TDEE {
                 // or more than 800 calories for males in addition to your sedentary amount. (REE x 1.725)
                 finalTDEE = ((Double) (restingEnergyExpenditure * 1.725)).intValue();
         }
+    }
+
+    public double getHeightInCM() {
+        return heightInCM;
+    }
+
+
+    public double getWeightInKG() {
+        return weightInKG;
+    }
+
+
+    public Gender getGender() {
+        return gender;
+    }
+
+
+    public int getAge() {
+        return age;
+    }
+
+
+    public int getRestingEnergyExpenditure() {
+        return restingEnergyExpenditure;
+    }
+
+    public MovementExpenditure getMovementExpenditure(){
+        return  this.movementExpenditure;
+    }
+
+
+    public int getFinalTDEE() {
+        return finalTDEE;
+    }
+
+
+    private void setWeightInKG(double weightInKG){
+        this.weightInKG = weightInKG;
+    }
+
+
+    public void setHeightInCM(double heightInCM) {
+        this.heightInCM = heightInCM;
+    }
+
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+
+    public void setMovementExpenditure(MovementExpenditure movementExpenditure) {
+        this.movementExpenditure = movementExpenditure;
     }
 
 }
