@@ -10,7 +10,7 @@ public enum Gender {
 
             case "FEMALE":  return "female";
 
-            default:        return "Unknown MovementExpenditure";
+            default:        return "Unknown";
         }
     }
 }
