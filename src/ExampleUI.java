@@ -1,3 +1,5 @@
+import java.sql.ResultSet;
+
 public class ExampleUI {
     public static void main(String[] args) {
         System.out.println("Welcome to the TDEE calculator");
@@ -12,5 +14,8 @@ public class ExampleUI {
         System.out.println("Gender: " + sampleTDEE.getGender());
         System.out.println("Movement Expenditure Chosen: " + sampleTDEE.getMovementExpenditure() + "\n");
         System.out.println("Your TDEE is: " + sampleTDEE.getFinalTDEE());
+
+        DBHandler dbh = DBHandler.getInstance("a", "b", "c");
+        dbh.connect();
     }
 }
