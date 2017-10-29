@@ -1,15 +1,12 @@
 /**
- * Designed for FitMeal by Matthew Edwards, Andras Herczeg and Faisal Rahman
  *
- * This class returns an int value which will be the TDEE calories.
- *
- * TDEE, total daily energy expenditure, is the amount of energy in calories you burn per day.
- * TDEE is best calculated by factoring in your BMR, or basal metabolic rate, and your activity level.
+ * TDEECalories, total daily energy expenditure, is the amount of energy in calories you burn per day.
+ * TDEECalories is best calculated by factoring in your BMR, or basal metabolic rate, and your activity level.
  *
  * The following page is used as a general guide: https://healthyeater.com/how-to-calculate-your-macros
  */
 
-public class TDEE {
+public class TDEECalories {
 
     //Static values for testing
 
@@ -18,7 +15,10 @@ public class TDEE {
     private Gender gender;
     private MovementExpenditure movementExpenditure;
 
-    public  TDEE(double weightInKG, double heightInCM, int age, Gender gender, MovementExpenditure movExp){
+
+    /**
+
+    public TDEECalories(double weightInKG, double heightInCM, int age, Gender gender, MovementExpenditure movExp){
         this.weightInKG = weightInKG;
         this.heightInCM = heightInCM;
         this.age = age;
@@ -27,9 +27,16 @@ public class TDEE {
         this.getTDEE();
     }
 
+
+     **/
+
+    public TDEECalories(){
+        super();
+    }
+
     private void getTDEE(){
         /**
-         * Males and females have different TDEE...
+         * Males and females have different TDEECalories...
          */
         if (gender.equals(Gender.MALE)){
             maleForumla();
@@ -117,7 +124,7 @@ public class TDEE {
     }
 
 
-    private void setWeightInKG(double weightInKG){
+    public void setWeightInKG(double weightInKG){
         this.weightInKG = weightInKG;
     }
 
