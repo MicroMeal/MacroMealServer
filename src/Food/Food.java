@@ -1,3 +1,5 @@
+package Food;
+
 public class Food {
     private int id;
     private String name;
@@ -9,6 +11,8 @@ public class Food {
         this. name = name;
         this.calories = calories;
         this.foodgroup = fooogroup;
+
+        return null; //Don't forget to set this to what you want. null for now due to compiation errors
     }
 
     public int getId() {

@@ -1,3 +1,7 @@
+package MacroCalculators;
+
+import MacroCalculators.Enums.Gender;
+
 /**
  * https://healthyeater.com/how-to-calculate-your-macros
  */
@@ -13,4 +17,6 @@ public class GoalCalories extends TDEECalories {
         setGender(gender);
         setMovementExpenditure(movExp);
     }
+
+
 }

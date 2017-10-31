@@ -1,3 +1,5 @@
+package MacroCalculators;
+
 public enum MovementExpenditure {
     SEDENTARY,
     LIGHTACTIVITY,
@@ -16,7 +18,7 @@ public enum MovementExpenditure {
 
             case "VERYACTIVE":          return "very active";
 
-            default:                    return "unknown MovementExpenditure";
+            default:                    return "unknown MacroCalculators.MovementExpenditure";
         }
     }
 }

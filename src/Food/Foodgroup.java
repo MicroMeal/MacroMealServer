@@ -1,4 +1,6 @@
-public enum Foodgroup {,
+package Food;
+
+public enum Foodgroup {
     DAIRY,
     SPICES,
     BABY,

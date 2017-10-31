@@ -1,7 +1,11 @@
+package MacroCalculators;
+
+import MacroCalculators.Enums.Gender;
+
 /**
  *
- * TDEECalories, total daily energy expenditure, is the amount of energy in calories you burn per day.
- * TDEECalories is best calculated by factoring in your BMR, or basal metabolic rate, and your activity level.
+ * MacroCalculators.TDEECalories, total daily energy expenditure, is the amount of energy in calories you burn per day.
+ * MacroCalculators.TDEECalories is best calculated by factoring in your BMR, or basal metabolic rate, and your activity level.
  *
  * The following page is used as a general guide: https://healthyeater.com/how-to-calculate-your-macros
  */
@@ -18,7 +22,7 @@ public class TDEECalories {
 
     /**
 
-    public TDEECalories(double weightInKG, double heightInCM, int age, Gender gender, MovementExpenditure movExp){
+    public MacroCalculators.TDEECalories(double weightInKG, double heightInCM, int age, MacroCalculators.Enums.Gender gender, MacroCalculators.MovementExpenditure movExp){
         this.weightInKG = weightInKG;
         this.heightInCM = heightInCM;
         this.age = age;
@@ -36,7 +40,7 @@ public class TDEECalories {
 
     private void getTDEE(){
         /**
-         * Males and females have different TDEECalories...
+         * Males and females have different MacroCalculators.TDEECalories...
          */
         if (gender.equals(Gender.MALE)){
             maleForumla();

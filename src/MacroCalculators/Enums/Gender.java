@@ -1,3 +1,5 @@
+package MacroCalculators.Enums;
+
 public enum Gender {
     MALE,
     FEMALE;
@@ -10,7 +12,7 @@ public enum Gender {
 
             case "FEMALE":  return "female";
 
-            default:        return "Unknown MovementExpenditure";
+            default:        return "Unknown gender";
         }
     }
 }
