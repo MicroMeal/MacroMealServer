@@ -1,5 +1,10 @@
 package DB;
 
+import Food.Food;
+
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
 public class DBQueryHandler {
 
     private  String url, user, pass;
@@ -19,21 +24,13 @@ public class DBQueryHandler {
     }
 
 
-    /**
-     * The below code was incompelte and was giving me compilation errors. Feel free to uncomment it when you get time
-     * to check it out
-     */
 
-
-/***
-
-
-    public Food.Food getFood(int id){
+    public Food getFood(int id){
         try {
             //TODO
             ResultSet rs = dbHandler.statment("SELECT FOOD_DES.NDB_No, FOOD_DES.Shrt_Desc, NUT_DATA.Nutr_Val, FOOD_DES.FdGrp_Cd  FROM FOOD_DES INNER JOIN NUT_DATA ON FOOD_DES.NDB_No = NUT_DATA.NDB_No WHERE FOOD_DES.NDB_No = " + id + " AND NUT_DATA.Nutr_No = 208;");
             rs.absolute(1);
-            Food.Food food = new Food.Food(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getInt(4));
+            Food food = new Food(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getInt(4));
             return food;
         }catch(Exception e){
             e.printStackTrace();
@@ -41,13 +38,13 @@ public class DBQueryHandler {
         }
     }
 
-    public ArrayList<Food.Food> getFoodList(){
-        ArrayList<Food.Food> foods = new ArrayList<Food.Food>();
+    public ArrayList<Food> getFoodList(){
+        ArrayList<Food> foods = new ArrayList<Food>();
         try {
             //TODO
             ResultSet rs = dbHandler.statment("SELECT FOOD_DES.NDB_No, FOOD_DES.Shrt_Desc, NUT_DATA.Nutr_Val, FOOD_DES.FdGrp_Cd  FROM FOOD_DES INNER JOIN NUT_DATA ON FOOD_DES.NDB_No = NUT_DATA.NDB_No WHERE NUT_DATA.Nutr_No = 208;");
             while (rs.next()){
-                Food.Food food = new Food.Food(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getInt(4));
+                Food food = new Food(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getInt(4));
                 foods.add(food);
             }
             return foods;
@@ -58,5 +55,5 @@ public class DBQueryHandler {
     }
 
 
- **/
+
 }
