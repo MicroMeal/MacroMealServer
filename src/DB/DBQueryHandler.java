@@ -1,9 +1,6 @@
-package DB;
-
-import Food.Food;
-
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.List;
 
 public class DBQueryHandler {
 
@@ -22,8 +19,6 @@ public class DBQueryHandler {
         }
 
     }
-
-
 
     public Food getFood(int id){
         try {
@@ -53,7 +48,4 @@ public class DBQueryHandler {
             return null;
         }
     }
-
-
-
 }

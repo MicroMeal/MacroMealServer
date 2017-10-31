@@ -1,16 +1,14 @@
-package Food;
-
 public class Food {
-    private int id;
+    private int id, foodgroup;
     private String name;
     private double calories;
-    private Foodgroup foodgroup;
+    //private Foodgroup foodgroup;
 
-    public Food (int id, String name, double calories, Foodgroup fooogroup){
+    public Food(int id, String name, double calories, int foodgroup){
         this.id = id;
         this. name = name;
         this.calories = calories;
-        this.foodgroup = fooogroup;
+        this.foodgroup = foodgroup;
     }
 
     public int getId() {
@@ -25,7 +23,7 @@ public class Food {
         return calories;
     }
 
-    public Foodgroup getFoodgroup() {
+    public int getFoodgroup() {
         return foodgroup;
     }
 }
