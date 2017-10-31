@@ -1,3 +1,5 @@
+package Food;
+
 public enum Foodgroup {
     DAIRY,
     SPICES,

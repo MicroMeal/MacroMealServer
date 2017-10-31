@@ -1,3 +1,5 @@
+package Food;
+
 public class Food {
     private int id, foodgroup;
     private String name;

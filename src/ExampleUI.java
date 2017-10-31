@@ -1,6 +1,8 @@
 import MacroCalculators.Enums.Gender;
 import MacroCalculators.GoalCalories;
 import MacroCalculators.MovementExpenditure;
+import DB.*;
+import Food.*;
 
 public class ExampleUI {
     public static void main(String[] args) {
@@ -16,5 +18,7 @@ public class ExampleUI {
         System.out.println("MacroCalculators.Enums.Gender: " + sampleGoalCalories.getGender());
         System.out.println("Movement Expenditure Chosen: " + sampleGoalCalories.getMovementExpenditure() + "\n");
         System.out.println("Your MacroCalculators.TDEECalories is: " + sampleGoalCalories.getFinalTDEE());
+
+        
     }
 }

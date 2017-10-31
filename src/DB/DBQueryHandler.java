@@ -1,13 +1,16 @@
+package DB;
+
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import Food.*;
 
 public class DBQueryHandler {
 
     private  String url, user, pass;
     private  DBHandler dbHandler;
 
-    public DBQueryHandler (String url, String user, String pass){
+    private DBQueryHandler (String url, String user, String pass){
         this.url = url;
         this.user = user;
         this.pass = pass;

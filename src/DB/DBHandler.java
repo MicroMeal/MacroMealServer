@@ -1,3 +1,5 @@
+package DB;
+
 import java.sql.*;
 
 public class DBHandler {
@@ -11,7 +13,7 @@ public class DBHandler {
     // Singleton pattern
     private  static  DBHandler instance;
 
-    private DBHandler(String url, String user, String pass){
+    public DBHandler(String url, String user, String pass){
         this.url = url;
         this.user = user;
         this.pass = pass;
