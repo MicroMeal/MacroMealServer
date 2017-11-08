@@ -2,6 +2,8 @@ package MacroCalculators;
 
 import MacroCalculators.Enums.Gender;
 
+//TODO - movement expenditure returning wrong results when added with REE
+
 /**
  *
  * MacroCalculators.TDEECalories, total daily energy expenditure, is the amount of energy in calories you burn per day.
@@ -20,9 +22,7 @@ public class TDEECalories {
     private MovementExpenditure movementExpenditure;
 
 
-    /**
-
-    public MacroCalculators.TDEECalories(double weightInKG, double heightInCM, int age, MacroCalculators.Enums.Gender gender, MacroCalculators.MovementExpenditure movExp){
+    public TDEECalories(double weightInKG, double heightInCM, int age, MacroCalculators.Enums.Gender gender, MacroCalculators.MovementExpenditure movExp){
         this.weightInKG = weightInKG;
         this.heightInCM = heightInCM;
         this.age = age;
@@ -32,7 +32,7 @@ public class TDEECalories {
     }
 
 
-     **/
+
 
     public TDEECalories(){
         super();
@@ -56,7 +56,7 @@ public class TDEECalories {
          * The forumla used in this method is The Mifflin, M. D., St Jeor formula.
          * For males: 10 x weight (kg) + 6.25 x height (cm) – 5 x age (y) + 5 = REE
          */
-        restingEnergyExpenditure = ((Double) (10 * weightInKG + 6.25 * heightInCM - 5 * age + 5)).intValue();
+        restingEnergyExpenditure = ((Double) (10 * weightInKG + 6.25 * heightInCM - 29 * age )).intValue();
         calculateMovementExpenditure();
     }
 
@@ -66,7 +66,7 @@ public class TDEECalories {
          * The forumla used in this method is The Mifflin, M. D., St Jeor formula.
          * For females: 10 x weight (kg) + 6.25 x height (cm) – 5 x age (y) – 161 = REE
          */
-        restingEnergyExpenditure = ((Double) (10 * weightInKG + 6.25 * heightInCM - 5 * age - 161)).intValue();
+        restingEnergyExpenditure = ((Double) (10 * weightInKG + 6.25 * heightInCM - 2 * age )).intValue()+86;
         calculateMovementExpenditure();
     }
 
@@ -75,22 +75,22 @@ public class TDEECalories {
             case SEDENTARY:
                 //Just normal everyday activity like a little walking, a couple
                 // flights of stairs, eating, talking etc. (REE X 1.2)
-                finalTDEE = ((Double) (restingEnergyExpenditure * 1.2)).intValue();
+                this.finalTDEE = ((Double) (restingEnergyExpenditure * 1.2)).intValue();
 
             case LIGHTACTIVITY:
                 //Any activity that burns an additional 200-400 calories for females
                 // or 250-500 calories for males more than your sedentary amount. (REE x 1.375)
-                finalTDEE = ((Double) (restingEnergyExpenditure * 1.375)).intValue();
+                this.finalTDEE = ((Double) (restingEnergyExpenditure * 1.375)).intValue();
 
             case MODERATEACTIVITY:
                 //Any activity that burns an additional 400-650 calories for females
                 // or 500-800 calories for males more than your sedentary amount. (REE x 1.55)
-                finalTDEE = ((Double) (restingEnergyExpenditure * 1.55)).intValue();
+                this.finalTDEE = ((Double) (restingEnergyExpenditure * 1.55)).intValue();
 
             case VERYACTIVE:
                 //Any activity that burns more than about 650 calories for females
                 // or more than 800 calories for males in addition to your sedentary amount. (REE x 1.725)
-                finalTDEE = ((Double) (restingEnergyExpenditure * 1.725)).intValue();
+                this.finalTDEE = ((Double) (restingEnergyExpenditure * 1.725)).intValue();
         }
     }
 
