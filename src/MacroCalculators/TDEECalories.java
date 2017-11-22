@@ -1,6 +1,7 @@
 package MacroCalculators;
 
 import MacroCalculators.Enums.Gender;
+import javafx.scene.paint.Stop;
 
 //TODO - movement expenditure returning wrong results when added with REE
 
@@ -17,7 +18,7 @@ public class TDEECalories {
     //Static values for testing
 
     private double weightInKG, heightInCM;
-    private int age, restingEnergyExpenditure, finalTDEE;
+    public int age, restingEnergyExpenditure, finalTDEE;
     private Gender gender;
     private MovementExpenditure movementExpenditure;
 
@@ -53,20 +54,20 @@ public class TDEECalories {
     private void maleForumla(){
 
         /**
-         * The forumla used in this method is The Mifflin, M. D., St Jeor formula.
-         * For males: 10 x weight (kg) + 6.25 x height (cm) – 5 x age (y) + 5 = REE
+         * Harris J, Benedict F. A biometric study of basal metabolism in man. Washington D.C. Carnegie Institute of Washington. 1919.
          */
-        restingEnergyExpenditure = ((Double) (10 * weightInKG + 6.25 * heightInCM - 29 * age )).intValue();
+
+        restingEnergyExpenditure = ((Double) (66.5 + (13.75 * weightInKG) + (5.003 * heightInCM) - (6.775 * age))).intValue();
         calculateMovementExpenditure();
     }
 
     private void femaleForumla(){
 
         /**
-         * The forumla used in this method is The Mifflin, M. D., St Jeor formula.
-         * For females: 10 x weight (kg) + 6.25 x height (cm) – 5 x age (y) – 161 = REE
+         * Harris J, Benedict F. A biometric study of basal metabolism in man. Washington D.C. Carnegie Institute of Washington. 1919.
          */
-        restingEnergyExpenditure = ((Double) (10 * weightInKG + 6.25 * heightInCM - 2 * age )).intValue()+86;
+
+        restingEnergyExpenditure = ((Double) (655.1 + (9.563 * weightInKG) + (1.850 * heightInCM) - (4.676 * age))).intValue();
         calculateMovementExpenditure();
     }
 
@@ -75,44 +76,45 @@ public class TDEECalories {
             case SEDENTARY:
                 //Just normal everyday activity like a little walking, a couple
                 // flights of stairs, eating, talking etc. (REE X 1.2)
-                this.finalTDEE = ((Double) (restingEnergyExpenditure * 1.2)).intValue();
+                finalTDEE = ((Double) (restingEnergyExpenditure * 1.2)).intValue();
+                break;
 
             case LIGHTACTIVITY:
                 //Any activity that burns an additional 200-400 calories for females
                 // or 250-500 calories for males more than your sedentary amount. (REE x 1.375)
-                this.finalTDEE = ((Double) (restingEnergyExpenditure * 1.375)).intValue();
+                finalTDEE = ((Double) (restingEnergyExpenditure * 1.375)).intValue();
+                break;
 
             case MODERATEACTIVITY:
                 //Any activity that burns an additional 400-650 calories for females
                 // or 500-800 calories for males more than your sedentary amount. (REE x 1.55)
-                this.finalTDEE = ((Double) (restingEnergyExpenditure * 1.55)).intValue();
+                finalTDEE = ((Double) (restingEnergyExpenditure * 1.55)).intValue();
+                break;
 
             case VERYACTIVE:
                 //Any activity that burns more than about 650 calories for females
                 // or more than 800 calories for males in addition to your sedentary amount. (REE x 1.725)
-                this.finalTDEE = ((Double) (restingEnergyExpenditure * 1.725)).intValue();
+                finalTDEE = ((Double) (restingEnergyExpenditure * 1.725)).intValue();
+                break;
         }
     }
+
 
     public double getHeightInCM() {
         return heightInCM;
     }
 
-
     public double getWeightInKG() {
         return weightInKG;
     }
-
 
     public Gender getGender() {
         return gender;
     }
 
-
     public int getAge() {
         return age;
     }
-
 
     public int getRestingEnergyExpenditure() {
         return restingEnergyExpenditure;
@@ -122,31 +124,23 @@ public class TDEECalories {
         return  this.movementExpenditure;
     }
 
-
-    public int getFinalTDEE() {
-        return finalTDEE;
-    }
-
+    public int getFinalTDEE() {return this.finalTDEE;}
 
     public void setWeightInKG(double weightInKG){
         this.weightInKG = weightInKG;
     }
 
-
     public void setHeightInCM(double heightInCM) {
         this.heightInCM = heightInCM;
     }
-
 
     public void setAge(int age) {
         this.age = age;
     }
 
-
     public void setGender(Gender gender) {
         this.gender = gender;
     }
-
 
     public void setMovementExpenditure(MovementExpenditure movementExpenditure) {
         this.movementExpenditure = movementExpenditure;

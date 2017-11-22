@@ -36,13 +36,13 @@ public enum GoalEnum  {
 
     public int getGoalCalories(int userCalories) {
         switch (name()){
-            case "GAINVERYSLOW":    return fromDecimalToInt(0.11 * userCalories);
+            case "GAINVERYSLOW":    return fromDecimalToInt(1.11 * userCalories);
 
-            case "GAINSLOW":  return fromDecimalToInt(0.12 * userCalories);
+            case "GAINSLOW":  return fromDecimalToInt(1.12 * userCalories);
 
-            case "GAINFAST":  return fromDecimalToInt(0.13 * userCalories);
+            case "GAINFAST":  return fromDecimalToInt(1.13 * userCalories);
 
-            case "GAINVERYFAST":  return fromDecimalToInt(0.14 * userCalories );
+            case "GAINVERYFAST":  return fromDecimalToInt(1.14 * userCalories );
 
             case "LOSEVERYSLOW":  return fromDecimalToInt(0.9 * userCalories);
 
@@ -52,7 +52,7 @@ public enum GoalEnum  {
 
             case "LOSEVERYFAST":  return fromDecimalToInt(0.6 * userCalories);
 
-            default:        return fromDecimalToInt(1 * userCalories); //Else maintenance calories
+            default:        return fromDecimalToInt(userCalories); //Else maintenance calories
         }
     }
 
