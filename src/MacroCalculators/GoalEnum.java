@@ -1,4 +1,4 @@
-package MacroCalculators.Enums;
+package MacroCalculators;
 
 /**
  * Created by Faze on 08/11/2017.
@@ -12,25 +12,24 @@ public enum GoalEnum  {
     public String toString() {
         String toReturn;
         switch (name()){
-            case "GAINVERYSLOW": toReturn = "Gain very slow";
+            case "GAINVERYSLOW":    return  "Gain very slow";
 
-            case "GAINSLOW":  toReturn = "Gain slow";
+            case "GAINSLOW":        return "Gain slow";
 
-            case "GAINFAST":  toReturn = "Gain fast";
+            case "GAINFAST":        return "Gain fast";
 
-            case "GAINVERYFAST": toReturn = "Gain very fast";
+            case "GAINVERYFAST":    return "Gain very fast";
 
-            case "LOSEVERYSLOW": toReturn = "Lose very slow";
+            case "LOSEVERYSLOW":    return "Lose very slow";
 
-            case "LOSESLOW": toReturn = "Lose slow";
+            case "LOSESLOW":        return "Lose slow";
 
-            case "LOSEFAST": toReturn = "Lose fast";
+            case "LOSEFAST":        return "Lose fast";
 
-            case "LOSEVERYFAST": toReturn = "Lose very fast";
+            case "LOSEVERYFAST":    return "Lose very fast";
 
-            default: toReturn = "You have not selected a goal, maintenance calories are presented."; //Else maintenance calories
+            default:                return  "You have not selected a goal, maintenance calories are presented."; //Else maintenance calories
 
-                return toReturn;
         }
     }
 

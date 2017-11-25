@@ -1,4 +1,4 @@
-package MacroCalculators.Enums;
+package MacroCalculators;
 
 public enum Gender {
     MALE,

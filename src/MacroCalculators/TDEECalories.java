@@ -1,8 +1,5 @@
 package MacroCalculators;
 
-import MacroCalculators.Enums.Gender;
-import javafx.scene.paint.Stop;
-
 //TODO - movement expenditure returning wrong results when added with REE
 
 /**
@@ -23,7 +20,7 @@ public class TDEECalories {
     private MovementExpenditure movementExpenditure;
 
 
-    public TDEECalories(double weightInKG, double heightInCM, int age, MacroCalculators.Enums.Gender gender, MacroCalculators.MovementExpenditure movExp){
+    public TDEECalories(double weightInKG, double heightInCM, int age, Gender gender, MacroCalculators.MovementExpenditure movExp){
         this.weightInKG = weightInKG;
         this.heightInCM = heightInCM;
         this.age = age;
@@ -31,9 +28,6 @@ public class TDEECalories {
         this.movementExpenditure = movExp;
         this.getTDEE();
     }
-
-
-
 
     public TDEECalories(){
         super();
